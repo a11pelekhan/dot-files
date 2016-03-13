@@ -12,12 +12,7 @@
 (setq c-default-style "bsd"
       c-basic-offset 4)
 
-;; Use C++ mode for .h files
-(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-
-;; Use Python mode for SCons files
-(add-to-list 'auto-mode-alist '("SConstruct" . python-mode))
-(add-to-list 'auto-mode-alist '("SConscript" . python-mode))
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 
 ;; Disable tab characters
 (setq-default indent-tabs-mode nil)
@@ -39,9 +34,6 @@
 
 ;; Delete trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;; Set Scheme program name
-(setq-default scheme-program-name "gsi")
 
 ;; Hide menu bar, toolbar, and scrollbar
 (menu-bar-mode -1)
